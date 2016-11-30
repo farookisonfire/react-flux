@@ -1,5 +1,8 @@
-$ = jQuery = require('jquery');
+const React = require('react');
+const Router = require('react-router');
+const routes = require('./routes');
 
-var App = console.log('Hello World From Browserify');
 
-module.exports = App;
+Router.run(routes, function(Handler) {
+  React.render(<Handler/>, document.getElementById('app'));
+});
