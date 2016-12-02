@@ -6,6 +6,7 @@ const Router = require('react-router');
 const DefaultRoute = Router.DefaultRoute;
 const Route = Router.Route;
 const NotFoundRoute = Router.NotFoundRoute;
+const Redirect = Router.Redirect;
 
 
 var routes = (
@@ -14,6 +15,9 @@ var routes = (
       <Route name="authors" handler={require('./components/authors/authorpage')}/>
       <Route name="about" handler={require('./components/about/aboutpage')} />
       <NotFoundRoute handler={require('./components/notFoundPage')} />
+      <Redirect from="about-us" to="about" />
+      <Redirect from="awthurs" to="authors" />
+      <Redirect from="about/*" to="about" />
     </Route>
 );
 
